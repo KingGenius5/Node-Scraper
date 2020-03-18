@@ -9,7 +9,7 @@ let table = new Table({
 })
 
 const options = {
-	url: `https://www.freecodecamp.org/forum/stylesheets/desktop_46_e9578bf7b6d54bd42dcfc1da9c7894c0ad145d4d.css?__ws=www.freecodecamp.org`,
+	url: `https://www.freecodecamp.org/forum/directory_items?period=weekly&order=likes_received`,
 	json: true
 }
 
@@ -31,7 +31,7 @@ function getChallengesCompletedAndPushToUserArray(userData) {
 	function next() {
 		if (i < userData.length) {
 			var options = {
-				url: `https://www.freecodecamp.org/` + userData[i].name,
+				url: `https://www.freecodecamp.org/forum/u/` + userData[i].name,
 				transform: body => cheerio.load(body)
 			}
 			rp(options)
